@@ -38,12 +38,7 @@ module.exports = {
         // jsx props 缩进
         'react/jsx-indent-props': ['error', 4],
         'no-multiple-empty-lines': ['error', {'max': 2}],// 空行最多不超过2行
-
-        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',// 在生产环境禁止使用console
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',// 在生产环境禁止使用debugger
         'no-alert': 'error',
-        'no-array-constructor': 'error',// 禁止使用数组构造器
-        'no-bitwise': 'error',// 禁止使用按位运算符
         'no-caller': 'error',// 禁止使用arguments.caller或arguments.callee
         'no-catch-shadow': 'error',// 禁止catch子句参数与外部作用域变量同名
         'no-class-assign': 'error',// 禁止给类赋值
@@ -66,6 +61,8 @@ module.exports = {
         'no-ex-assign': 'error',// 禁止给catch语句中的异常参数赋值
         'no-extend-native': 'error',// 禁止扩展native对象
         'no-extra-bind': 'error',// 禁止不必要的函数绑定
+
+
         'no-extra-boolean-cast': 'error',// 禁止不必要的bool转换
         'no-extra-parens': 'error',// 禁止非必要的括号
         'no-extra-semi': 'error',// 禁止多余的冒号
@@ -150,7 +147,7 @@ module.exports = {
         'space-before-blocks': [2, 'always'],// 不以新行开始的块{前面要不要有空格
         'space-in-parens': [2, 'never'],// 小括号里面要不要有空格
         'space-unary-ops': [0, {'words': true, 'nonwords': false}],// 一元运算符的前/后要不要加空格
-        'spaced-comment': 2,// 注释风格要不要有空格什么的
+        'spaced-comment': 0,// 注释风格要不要有空格什么的
         'strict': 2,// 使用严格模式
         'use-isnan': 2,// 禁止比较时使用NaN，只能用isNaN()
         'valid-typeof': 2,// 必须使用合法的typeof的值
