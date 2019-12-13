@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "analyze": "source-map-explorer build/static/js/main.*",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,6 +33,7 @@
     "eslint-config-alloy": "^3.4.0",
     "eslint-plugin-react": "^7.17.0",
     "node-sass": "^4.13.0",
+    "react-app-rewired": "^2.1.5",
     "typescript": "^3.7.3"
   },
   "eslintConfig": {

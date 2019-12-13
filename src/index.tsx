@@ -47,7 +47,6 @@ function creatRouter() {
     return null;
 }
 
-
 ReactDOM.render(
     <BrowserRouter
         basename='/en'
