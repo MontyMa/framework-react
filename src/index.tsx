@@ -9,7 +9,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import {BrowserRouter, Route} from 'react-router-dom';
-import {Home} from './Home';
+import {Home} from './pages/Home';
 
 console.log(Route);
 
