@@ -5,3 +5,4 @@ declare function setTimeout(handler: (...args: any[]) => void, timeout?: number,
 
 // 修正 setInterval 类型问题
 declare function setInterval(handler: (...args: any[]) => void, timeout?: number, ...args: any[]): number;
+
