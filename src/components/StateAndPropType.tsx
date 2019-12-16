@@ -20,7 +20,7 @@ export class StateAndPropType extends Component<PropsInterface, StateInterface> 
         this.hello = this.props.hello;
     }
 
-    state = {
+    readonly state = {
         hhhh: '我是state'
     };
 
