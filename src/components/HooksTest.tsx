@@ -20,7 +20,6 @@ const useSetTimeout = (t: number) => {
 
 function Example() {
     const { count, setCount } = useStateFunc();
-    console.log(count, setCount);
     useSetTimeout(1000);
     return (
         <div>
