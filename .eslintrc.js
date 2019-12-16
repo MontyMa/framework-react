@@ -14,6 +14,7 @@ module.exports = {
     },
     // 规则
     rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
         'semi': 'error',    // 必须使用分号结尾
         'indent': ['error', 4], // 必须是4个缩进
         'no-unused-vars': ['error', {'vars': 'all', 'args': 'after-used'}],     // 不能有声明后未被使用的变量或参数
