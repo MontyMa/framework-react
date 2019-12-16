@@ -45,7 +45,8 @@ npm run start
 
 ### ESLint
 
-作为一个比较有追求的前端码农，当然得注重一下规范开发了。于是乎我就想到了 `eslint` 和 `tslint`。由于性能原因，[TypeScript 官方决定全面采用 ESLint](https://eslint.org/blog/2019/01/future-typescript-eslint#top)
+作为一个比较有追求的前端码农，当然得注重一下规范开发了。于是乎我就想到了 `eslint` 和 `tslint`。由于性能原因，
+[TypeScript 官方决定全面采用 ESLint](https://eslint.org/blog/2019/01/future-typescript-eslint#top)
 
 那么还等什么，来吧您就！
 
@@ -82,6 +83,9 @@ module.exports = {
 };
 ```
 
+如果不想检查某一个文件、文件夹、某一类文件，可以在根目录下添加文件 `.eslintignore`，进行详细配置即可，例如：添加 
+`*.d.ts` 表示不检查后缀为 `d.ts` 的文件
+
 #### plugin 与 extend 的区别：
 
 - `extend` 提供的是 `eslint` 现有规则的一系列预设
@@ -100,10 +104,9 @@ npm install node-sass
 ```
 等待安装完成后，重启项目即可。
 
+至此，一个简单的 `react+typescript` 起手项目就基本完成了
 
-
-
-
+> 如何在项目中使用路由？请移步 [使用React-router-dom](./readme/使用React-router.md);
 
 
 
