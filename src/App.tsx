@@ -20,7 +20,8 @@ export class App extends Component<any, {
         return (
             <div className="App">
                 <h1>Hello World</h1>
-                <StateAndPropType hello={this.state.appName}
+                <StateAndPropType
+                    hello={this.state.appName}
                     handler={this.stateAndPropTypeHandler}
                 />
                 <Example />
