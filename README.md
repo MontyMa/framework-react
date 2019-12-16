@@ -47,9 +47,9 @@ npm run start
 
 #### 安装 ESLint 解析 TypeScript 的依赖
 
-1. eslint：javascript代码检测工具，使用espree解析器
-1. @typescript-eslint/parser：将 TypeScript 转换为 ESTree，使 eslint 可以识别
-1. @typescript-eslint/eslint-plugin：只是一个可以打开或关闭的规则列表
+- eslint：javascript代码检测工具，使用espree解析器
+- @typescript-eslint/parser：将 TypeScript 转换为 ESTree，使 eslint 可以识别
+- @typescript-eslint/eslint-plugin：只是一个可以打开或关闭的规则列表
 
 ```
 npm i eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
@@ -59,22 +59,29 @@ npm i eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
 
 ```js
 module.exports = {
-    parser: '@typescript-eslint/parser',
-    extends: ['plugin:@typescript-eslint/recommended'],
-    plugins: ['@typescript-eslint'],
-    rules: {}
+   // 解析器
+       parser: '@typescript-eslint/parser',
+   
+       // 继承的规则 [扩展]
+       extends: ['plugin:@typescript-eslint/recommended', 'react-app'],
+   
+       // 插件
+       plugins: ['@typescript-eslint', 'react'],
+   
+       // 规则
+       rules: {
+           // 必须使用分号结尾
+           semi: 'error',
+           // 必须是4个缩进
+           indent: ['error', 4]
+       }
 };
 ```
 
 #### plugin 与 extend 的区别：
 
-extend 提供的是 eslint 现有规则的一系列预设
-而 plugin 则提供了除预设之外的自定义规则，当你在 eslint 的规则里找不到合适的的时候就可以借用插件来实现了
-
-
-
-> 补充一下： `prettier` 由于本人才疏学浅，还没做深研究，这里不做讨论！(其实就是我不会，不能瞎逼逼 ^_^)。
-
+- `extend` 提供的是 `eslint` 现有规则的一系列预设
+- `plugin` 则是提供了除预设之外的自定义规则，当你在 `eslint` 的规则里找不到合适的的时候就可以借用插件来实现了
 
 
 
