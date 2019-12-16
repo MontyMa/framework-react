@@ -19,7 +19,7 @@ export class App extends Component<any, {
     render(): React.ReactElement {
         return (
             <div className="App">
-                <h1>Hello World</h1>
+                <h1>Hello World121312</h1>
                 <StateAndPropType hello={this.state.appName}
                     handler={this.stateAndPropTypeHandler}
                 />
