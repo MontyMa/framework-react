@@ -11,12 +11,6 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {Home} from './pages/Home';
 
-console.log(Route);
-
-// function Home() {
-//     return <div>Hello Home</div>;
-// }
-
 function About() {
     return <div>Hello About</div>;
 }

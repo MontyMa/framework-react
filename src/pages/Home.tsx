@@ -3,6 +3,7 @@
  */
 
 import React, {Component, RefObject} from 'react';
+import {MyForm} from './components/MyForm';
 
 function Child(props: {
     name: string;
@@ -15,9 +16,6 @@ function Child(props: {
         </ul>
     );
 }
-
-
-console.log(Element);
 
 export class Home extends Component {
 
@@ -70,12 +68,11 @@ export class Home extends Component {
         console.log(this);
     }
 
+    // 创建list
     createList(): any[] {
-        const aa = this.listData.map(data => {
+        return this.listData.map(data => {
             return <div key={data}>{data}</div>;
         });
-        console.log(aa);
-        return aa;
     }
 
     render() {
@@ -90,6 +87,7 @@ export class Home extends Component {
                 <button onClick={(event) => this.btnClick(event)}>点击事件</button>
 
                 {this.createList()}
+                <MyForm/>
             </div>
         );
     }
