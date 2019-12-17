@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.scss';
-import {StateAndPropType} from './components/StateAndPropType';
+import { StateAndPropType } from './components/StateAndPropType';
 
 export class App extends Component<any, {
     appName: string;
