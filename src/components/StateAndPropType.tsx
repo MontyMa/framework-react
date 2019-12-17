@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
+import { useStateFunc } from './HooksTest';
 interface PropsInterface {
     hello: string;
 
@@ -10,28 +10,33 @@ interface StateInterface {
     hhhh: string;
 }
 
-export class StateAndPropType extends Component<PropsInterface, StateInterface> {
-    private handler: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    private hello: string;
+function Childs(props: { onClick(e: any): void }) {
+    const childsStates = useStateFunc();
+    return <div onClick={() => props.onClick(childsStates.setCount)}>{childsStates.count}</div>
+}
 
-    constructor(props: PropsInterface) {
-        super(props);
-        this.handler = this.props.handler;
-        this.hello = this.props.hello;
+export class StateAndPropType extends Component<PropsInterface, StateInterface> {
+    private handler = (event: React.MouseEvent<HTMLButtonElement>): void => {
+        this.props.handler(event)
     }
+    private hello: string = this.props.hello;
 
     readonly state = {
         hhhh: '我是state'
     };
 
-    render(): React.ReactElement {
+
+    render() {
         return (
             <div>
                 <ul>
                     <li>{this.props.hello}</li>
                     <li>{this.state.hhhh}</li>
                 </ul>
-                <button onClick={(event): void => this.handler(event)}>
+                <Childs onClick={(setCount) => {
+                    setCount((x: any) => x + 1)
+                }} />
+                <button onClick={this.handler}>
                     点击我
                 </button>
             </div>
