@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import './App.scss';
 import {Calculator} from './components/Calculator';
-
-// state interface
-// interface StateType {}
+import {Link} from 'react-router-dom';
 
 export class App extends Component<any, any> {
     state = {};
@@ -13,6 +11,7 @@ export class App extends Component<any, any> {
             <div className="App">
                 <h1>Hello World</h1>
                 <Calculator />
+                <Link to="/test-lazy">TEST-LAZY</Link>
             </div>
         );
     }
