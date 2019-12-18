@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TemperatureInput} from './TemperatureInput';
+import {TemperatureInput} from '../components/TemperatureInput';
 
 interface StateType {
     celsius: string;
@@ -24,7 +24,7 @@ function tryConvert(temperature: string, convert: (params: number) => number) {
     return rounded.toString();
 }
 
-export class Calculator extends Component<any, StateType> {
+export default class CalculatorPage extends Component<any, StateType> {
     state = {
         celsius: '0',
         fahrenheit: '0'
@@ -51,6 +51,7 @@ export class Calculator extends Component<any, StateType> {
     render() {
         return (
             <div>
+                <h3>状态提升</h3>
                 <TemperatureInput
                     scale="celsius"
                     temperature={this.state.celsius}

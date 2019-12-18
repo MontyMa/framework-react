@@ -1,17 +1,26 @@
 import React, {Suspense, lazy} from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {HaaderNav} from './components/HaaderNav';
 
-const LazyComponent = lazy(() => import('./components/LazyComponentsss'));
+// 页面懒加载
+const Calculator = lazy(() => import('./pages/Calculator'));
+const AboutLazy = lazy(() => import('./pages/AboutLazy/AboutLazy'));
 
 ReactDOM.render(
     <BrowserRouter basename={'/en-us'}>
-        <Route path={'/'} component={App} />
+        <HaaderNav />
+
+        <Link to="/calculator">变量提升</Link>
+        <br />
+        <Link to="/component-lazy">组件懒加载</Link>
+        <br />
         <Suspense fallback={<div>Loading</div>}>
-            <Route path={'/test-lazy'} component={LazyComponent} />
+            <Route path={'/calculator'} component={Calculator} />
+            <Route path={'/component-lazy'} component={AboutLazy} />
         </Suspense>
     </BrowserRouter>,
     document.getElementById('root')
