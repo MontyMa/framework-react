@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 const useStateFunc = () => {
     // 声明一个叫 "count" 的 state 变量
@@ -7,7 +7,7 @@ const useStateFunc = () => {
     return {
         count,
         setCount
-    }
+    };
 };
 
 const useSetTimeout = (t: number) => {
@@ -19,17 +19,15 @@ const useSetTimeout = (t: number) => {
 };
 
 function Example() {
-    const { count, setCount } = useStateFunc();
+    const {count, setCount} = useStateFunc();
     console.log(count, setCount);
     useSetTimeout(1000);
     return (
         <div>
             <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>
-                Click me
-      </button>
+            <button onClick={() => setCount(count + 1)}>Click me</button>
         </div>
     );
 }
 
-export { Example, useStateFunc };
+export {Example, useStateFunc};

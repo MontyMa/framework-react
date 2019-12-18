@@ -5,15 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-
 ReactDOM.render(
     <BrowserRouter basename={'/en-us'}>
-        <Route path={'/'}
-            component={App}
-        />
+        <Route path={'/'} component={App} />
     </BrowserRouter>,
-    document.getElementById('root'));
-
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

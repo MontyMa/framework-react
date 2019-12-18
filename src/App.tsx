@@ -1,30 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.scss';
-import { StateAndPropType } from './components/StateAndPropType';
-import { Example } from './components/HooksTest';
+import {Calculator} from './components/Calculator';
 
-export class App extends Component<any, {
-    appName: string;
-}> {
-    state = {
-        appName: 'World'
-    };
+// state interface
+// interface StateType {}
 
-    stateAndPropTypeHandler = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        this.setState({
-            appName: `React Event clientX : ${event.clientX}`
-        });
-    }
+export class App extends Component<any, any> {
+    state = {};
 
-    render(): React.ReactElement {
+    render() {
         return (
             <div className="App">
                 <h1>Hello World</h1>
-                <StateAndPropType
-                    hello={this.state.appName}
-                    handler={this.stateAndPropTypeHandler}
-                />
-                <Example />
+                <Calculator />
             </div>
         );
     }
