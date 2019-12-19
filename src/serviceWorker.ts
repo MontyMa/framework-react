@@ -109,7 +109,8 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
         .then(response => {
             // Ensure service worker exists, and that we really are getting a JS file.
             const contentType = response.headers.get('content-type');
-            const contentTypeStatus = contentType !== null && contentType.indexOf('javascript') === -1;
+            const contentTypeStatus =
+                contentType !== null && contentType.indexOf('javascript') === -1;
 
             if (response.status === 404 || contentTypeStatus) {
                 // No service worker found. Probably a different app. Reload the page.

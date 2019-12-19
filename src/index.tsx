@@ -9,6 +9,7 @@ import {HaaderNav} from './components/HaaderNav';
 // 页面懒加载
 const Calculator = lazy(() => import('./pages/Calculator'));
 const AboutLazy = lazy(() => import('./pages/AboutLazy/AboutLazy'));
+const Context = lazy(() => import('./pages/Context'));
 
 ReactDOM.render(
     <BrowserRouter basename={'/en-us'}>
@@ -18,9 +19,12 @@ ReactDOM.render(
         <br />
         <Link to="/component-lazy">组件懒加载</Link>
         <br />
+        <Link to="/context">Context</Link>
+        <br />
         <Suspense fallback={<div>Loading</div>}>
             <Route path={'/calculator'} component={Calculator} />
             <Route path={'/component-lazy'} component={AboutLazy} />
+            <Route path={'/context'} component={Context} />
         </Suspense>
     </BrowserRouter>,
     document.getElementById('root')
