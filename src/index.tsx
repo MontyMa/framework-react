@@ -11,20 +11,26 @@ const Calculator = lazy(() => import('./pages/Calculator'));
 const AboutLazy = lazy(() => import('./pages/AboutLazy/AboutLazy'));
 const Context = lazy(() => import('./pages/Context'));
 
+
+const ddd = (): string => {
+    console.log('123123');
+    return '/en-us';
+};
+
 ReactDOM.render(
-    <BrowserRouter basename={'/en-us'}>
-        <HaaderNav />
+    <BrowserRouter basename={ddd()}>
+        <HaaderNav/>
 
         <Link to="/calculator">变量提升</Link>
-        <br />
+        <br/>
         <Link to="/component-lazy">组件懒加载</Link>
-        <br />
+        <br/>
         <Link to="/context">Context</Link>
-        <br />
+        <br/>
         <Suspense fallback={<div>Loading</div>}>
-            <Route path={'/calculator'} component={Calculator} />
-            <Route path={'/component-lazy'} component={AboutLazy} />
-            <Route path={'/context'} component={Context} />
+            <Route path={'/calculator'} component={Calculator}/>
+            <Route path={'/component-lazy'} component={AboutLazy}/>
+            <Route path={'/context'} component={Context}/>
         </Suspense>
     </BrowserRouter>,
     document.getElementById('root')
