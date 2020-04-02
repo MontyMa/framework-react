@@ -1,4 +1,4 @@
-import React, {Suspense, lazy} from 'react';
+import React, {Suspense, lazy, Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 // import App from './App';
@@ -12,27 +12,60 @@ const AboutLazy = lazy(() => import('./pages/AboutLazy/AboutLazy'));
 const Context = lazy(() => import('./pages/Context'));
 
 
-const ddd = (): string => {
-    console.log('123123');
-    return '/en-us';
-};
+interface PropsInterface {
+    name: string;
+}
+
+class Entry extends Component<PropsInterface, any> {
+    state = {
+        basename: 'en-us'
+    };
+
+    lang = ['en-us', 'zh-cn', 'ddd', 'fff', 'ggg'];
+
+    constructor(props: PropsInterface) {
+        super(props);
+        console.log(props);
+        console.log(this.state);
+
+        let count = 0;
+        setInterval(() => {
+            count++;
+            if (count <= 4) {
+                console.log(this.lang[count]);
+                this.setState({
+                    basename: this.lang[count]
+                });
+                return;
+            }
+            count = 0;
+        }, 3000);
+    }
+
+    render(): React.ReactElement<React.JSXElementConstructor<any>> {
+        console.log(this.state.basename, 'this.state.basename');
+        return (
+            <BrowserRouter basename={this.state.basename}>
+                <HaaderNav/>
+
+                <Link to="/calculator">变量提升</Link>
+                <br/>
+                <Link to="/component-lazy">组件懒加载</Link>
+                <br/>
+                <Link to="/context">Context</Link>
+                <br/>
+                <Suspense fallback={<div>Loading</div>}>
+                    <Route path={'/calculator'} component={Calculator}/>
+                    <Route path={'/component-lazy'} component={AboutLazy}/>
+                    <Route path={'/context'} component={Context}/>
+                </Suspense>
+            </BrowserRouter>
+        );
+    }
+}
 
 ReactDOM.render(
-    <BrowserRouter basename={ddd()}>
-        <HaaderNav/>
-
-        <Link to="/calculator">变量提升</Link>
-        <br/>
-        <Link to="/component-lazy">组件懒加载</Link>
-        <br/>
-        <Link to="/context">Context</Link>
-        <br/>
-        <Suspense fallback={<div>Loading</div>}>
-            <Route path={'/calculator'} component={Calculator}/>
-            <Route path={'/component-lazy'} component={AboutLazy}/>
-            <Route path={'/context'} component={Context}/>
-        </Suspense>
-    </BrowserRouter>,
+    <Entry name={'monty'}/>,
     document.getElementById('root')
 );
 

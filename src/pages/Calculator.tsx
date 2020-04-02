@@ -30,6 +30,12 @@ export default class CalculatorPage extends Component<any, StateType> {
         fahrenheit: '0'
     };
 
+    constructor(props: any) {
+        super(props);
+
+        console.log(props);
+    }
+
     handleChange = (
         type: 'celsius' | 'fahrenheit',
         event: React.ChangeEvent<HTMLInputElement>
@@ -49,6 +55,7 @@ export default class CalculatorPage extends Component<any, StateType> {
     };
 
     render() {
+        console.log('ccc');
         return (
             <div>
                 <h3>状态提升</h3>
