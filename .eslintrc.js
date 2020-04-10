@@ -62,7 +62,7 @@ module.exports = {
         'no-multi-str': 'error', // 字符串不能用\换行
         'no-native-reassign': 'error', // 不能重写native对象
         'no-negated-in-lhs': 'error', // in操作符的左边不能有!
-        'no-nested-ternary': 'error', // 禁止使用嵌套的三目运算
+        // 'no-nested-ternary': 'error', // 禁止使用嵌套的三目运算
         'no-new': 'error', // 禁止在使用new构造一个实例后不赋值
         'no-octal': 'error', // 禁止使用八进制数字
         'no-octal-escape': 'error', // 禁止使用八进制转义序列
