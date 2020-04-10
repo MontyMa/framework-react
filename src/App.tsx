@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.scss';
+import Button from '@material-ui/core/Button';
 
 export class App extends Component<any, any> {
     state = {};
@@ -10,7 +11,13 @@ export class App extends Component<any, any> {
     }
 
     render() {
-        return <div className="App">App</div>;
+        return <div className="App">
+            Appdfdf
+
+            <Button variant="contained" color="primary">
+                你好，世界
+            </Button>
+        </div>;
     }
 }
 
