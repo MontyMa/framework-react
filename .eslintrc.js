@@ -91,7 +91,7 @@ module.exports = {
         'arrow-spacing': 'error', // =>的前/后括号空格
         'brace-style': [1, '1tbs'], // 大括号风格
         camelcase: 2, // 强制驼峰法命名
-        'comma-dangle': [2, 'never'], // 对象字面量项尾不能有逗号
+        // 'comma-dangle': [2, 'never'], // 对象字面量项尾不能有逗号
         'comma-spacing': 'error', // 逗号前后的空格
         'comma-style': [2, 'last'], // 逗号风格，换行时在行首还是行尾
         complexity: [0, 11], // 循环复杂度
@@ -104,7 +104,7 @@ module.exports = {
         'func-names': 'error', // 函数表达式必须有名字
         'generator-star-spacing': 'error', // 生成器函数*的前后空格
         'guard-for-in': 'error', // forin循环要用if语句过滤
-        'id-length': ['error', {max: 30, min: 3}], // 变量名长度
+        // 'id-length': ['error', {max: 30, min: 3}], // 变量名长度
         'init-declarations': 2, // 声明时必须赋初值
         'key-spacing': [2, {beforeColon: false, afterColon: true}], // 对象字面量中冒号的前后空格
         'new-cap': 2, // 函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用
