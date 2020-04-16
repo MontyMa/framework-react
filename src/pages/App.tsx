@@ -1,21 +1,25 @@
-import React, {useMemo, useState} from 'react';
+import React, {useMemo, useState, Provider, useContext} from 'react';
 import Routing from '../router/routing';
-import {ThemeProvider} from '@material-ui/core/styles';
-import {themesInstance} from '../assets/theme-instance';
-import {observer,} from 'mobx-react';
-export const App = () => {
-    const [themesType, setThemesType] = useState('light');
-    
+import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+// import {themesInstance} from '../assets/theme-instance';
+import {TodoStoreProvider, useTodoStore} from '../store/common';
+import {observer} from 'mobx-react';
+
+export const App = observer(() => {
+    const {num} = useTodoStore();
+    //
     const themes = useMemo(() => {
-        
-        return 'dfddf';
-    }, [themesType]);
-    
-    console.log(themes);
-    
+        return createMuiTheme({
+            palette: {
+                type: 'dark'
+            }
+        });
+        // return setTheme ? setTheme(themeType) : ;
+    }, [num]);
+    console.log(num);
     return (
-        <ThemeProvider theme={themesInstance}>
+        <ThemeProvider theme={themes}>
             <Routing/>
         </ThemeProvider>
     );
-};
+});

@@ -1,38 +1,40 @@
-import React from 'react';
-import {Button, createMuiTheme, createStyles, Theme} from '@material-ui/core';
+import React, {useContext} from 'react';
+import {Button, createStyles, Theme} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {ButtonBase} from '@material-ui/core/';
+import {observer} from 'mobx-react';
+import {useTodoStore} from '../../store/common';
 
 const useStyles = makeStyles((theme: Theme) => {
     console.log(theme);
     return createStyles({
         ripple: {
-            background: theme.background,
+            // background: theme.background,
             display: 'block',
         }
     });
 });
 
-export default () => {
+export default observer((props: React.ComponentProps<any>) => {
     const classes = useStyles();
+    const store = useTodoStore();
+    
     const changeColor = () => {
-        // createMuiTheme({
-        //     palette: {
-        //         type: 'light'
-        //     }
-        // });
+        store.setnnn();
     };
     
-    return <div>
-        <ButtonBase
-            component={'div'}
-            className={classes.ripple}>
-            <div>
-                Ripple
-            </div>
-        </ButtonBase>
-        <Button variant="contained" onClick={changeColor}>
-            你好，世界
-        </Button>
-    </div>;
-};
+    return (
+        <div>
+            <ButtonBase
+                component={'div'}
+                className={classes.ripple}>
+                <div>
+                    Ripple {store.num}
+                </div>
+            </ButtonBase>
+            <Button variant="contained" onClick={changeColor}>
+                你好，世界
+            </Button>
+        </div>
+    );
+});

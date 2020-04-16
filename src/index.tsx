@@ -12,13 +12,12 @@ import 'normalize.css';
 import './styles/base.scss';
 
 import {App} from './pages/App';
-// import {themesInstance} from './assets/theme-instance';
-// import {ThemeProvider} from '@material-ui/core/styles';
-//
-// console.log(themesInstance);
+import {TodoStoreProvider} from './store/common';
 
 ReactDOM.render(
-    <App/>,
+    <TodoStoreProvider>
+        <App/>
+    </TodoStoreProvider>,
     document.getElementById('root')
 );
 

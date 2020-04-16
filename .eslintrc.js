@@ -74,7 +74,7 @@ module.exports = {
         'no-sequences': 'error', // 禁止使用逗号运算符
         'no-shadow': 'error', // 外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
         'no-shadow-restricted-names': 'error', // 严格模式中规定的限制标识符不能作为声明时的变量名使用
-        'no-spaced-func': 'error', // 函数调用时函数名与()之间不能有空格
+        // 'no-spaced-func': 'error', // 函数调用时函数名与()之间不能有空格
         'no-sparse-arrays': 'error', // 禁止稀疏数组，[1,,2]
         'no-this-before-super': 'error', // 在调用super()之前不能使用this或super
         'no-throw-literal': 'error', // 禁止抛出字面量错误throw"error";

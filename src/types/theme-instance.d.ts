@@ -4,9 +4,9 @@
 
 export declare module '@material-ui/core/styles/createMuiTheme' {
     interface Theme {
-        background: string;
-        palette?: {
-            type: string
+        // background: string;
+        palette: {
+            type: 'light' | 'dark'
         };
         status: {
             danger: string;
@@ -15,9 +15,9 @@ export declare module '@material-ui/core/styles/createMuiTheme' {
     
     // allow configuration using `createMuiTheme`
     interface ThemeOptions {
-        background: string;
+        // background: string;
         palette?: {
-            type: string
+            type?: 'light' | 'dark'
         };
         // background2: string;
         status?: {
