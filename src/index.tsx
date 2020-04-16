@@ -12,15 +12,13 @@ import 'normalize.css';
 import './styles/base.scss';
 
 import {App} from './pages/App';
-import {themesInstance} from './assets/theme-instance';
-import {ThemeProvider} from '@material-ui/core/styles';
-
-console.log(themesInstance);
+// import {themesInstance} from './assets/theme-instance';
+// import {ThemeProvider} from '@material-ui/core/styles';
+//
+// console.log(themesInstance);
 
 ReactDOM.render(
-    <ThemeProvider theme={themesInstance}>
-        <App/>
-    </ThemeProvider>,
+    <App/>,
     document.getElementById('root')
 );
 

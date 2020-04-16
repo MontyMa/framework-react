@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, createStyles, Theme} from '@material-ui/core';
+import {Button, createMuiTheme, createStyles, Theme} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {ButtonBase} from '@material-ui/core/';
 
@@ -15,6 +15,13 @@ const useStyles = makeStyles((theme: Theme) => {
 
 export default () => {
     const classes = useStyles();
+    const changeColor = () => {
+        // createMuiTheme({
+        //     palette: {
+        //         type: 'light'
+        //     }
+        // });
+    };
     
     return <div>
         <ButtonBase
@@ -24,7 +31,7 @@ export default () => {
                 Ripple
             </div>
         </ButtonBase>
-        <Button variant="contained">
+        <Button variant="contained" onClick={changeColor}>
             你好，世界
         </Button>
     </div>;
