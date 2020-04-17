@@ -15,13 +15,13 @@ const useStyles = makeStyles((theme: Theme) => {
     });
 });
 
-export default observer((props: React.ComponentProps<any>) => {
+export default (props: React.ComponentProps<any>) => {
     const classes = useStyles();
-    const store = useTodoStore();
-    
-    const changeColor = () => {
-        store.setnnn();
-    };
+    // const store = useTodoStore();
+    //
+    // const changeColor = () => {
+    //     store.setnnn();
+    // };
     
     return (
         <div>
@@ -29,12 +29,12 @@ export default observer((props: React.ComponentProps<any>) => {
                 component={'div'}
                 className={classes.ripple}>
                 <div>
-                    Ripple {store.num}
+                    Ripple
                 </div>
             </ButtonBase>
-            <Button variant="contained" onClick={changeColor}>
+            <Button variant="contained">
                 你好，世界
             </Button>
         </div>
     );
-});
+};

@@ -12,12 +12,12 @@ import 'normalize.css';
 import './styles/base.scss';
 
 import {App} from './pages/App';
-import {TodoStoreProvider} from './store/common';
-
+// import {TodoStoreProvider} from './store/common';
+//
+// <TodoStoreProvider>
+// </TodoStoreProvider>
 ReactDOM.render(
-    <TodoStoreProvider>
-        <App/>
-    </TodoStoreProvider>,
+    <App/>,
     document.getElementById('root')
 );
 
